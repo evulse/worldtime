@@ -88,7 +88,7 @@ $(window).load(function(){
 
 
 if(window.location.hash) {
-  var parts = window.location.hash.substring(1).split('/');
+  var parts = decodeURIComponent(window.location.hash.substring(1)).split('/');
   $('#time').html(moment(parts[0]).format('LLLL'));
   $('#timezone').html(jstz.determine().name()+ " time");
   if(parts[1]) {
